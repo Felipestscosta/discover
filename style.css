@@ -77,6 +77,18 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+
+  animation: slide-out 0.4s;
+
+  cursor: pointer;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+.light #switch button {
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -89,11 +101,6 @@ body {
   border-radius: 9999px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-}
-
-.light #switch button {
-  right: 0;
-  left: initial;
 }
 
 /* links/ */
@@ -179,5 +186,24 @@ footer a {
 
   .light {
     --bg-url: url(./assets/bg-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
